@@ -72,11 +72,11 @@ class Recognition:
     def identify(self, image):
         faces = self.detect.find_faces(image)
 
-        # for i, face in enumerate(faces):
-        #     if debug:
-        #         cv2.imshow("Face: " + str(i), face.image)
-        #     face.embedding = self.encoder.generate_embedding(face)
-        #     face.name = self.identifier.identify(face)
+        for i, face in enumerate(faces):
+            if debug:
+                cv2.imshow("Face: " + str(i), face.image)
+            face.embedding = self.encoder.generate_embedding(face)
+            face.name = self.identifier.identify(face)
 
         return faces
 
