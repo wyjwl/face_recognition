@@ -46,7 +46,7 @@ def add_overlays(frame, faces, frame_rate):
 
 
 def main(args):
-    frame_interval = 3  # Number of frames after which to run face detection
+    frame_interval = 5  # Number of frames after which to run face detection
     fps_display_interval = 3  # seconds
     frame_rate = 0
     frame_count = 0
@@ -73,7 +73,7 @@ def main(args):
                 start_time = time.time()
                 frame_count = 0
 
-        # add_overlays(frame, faces, frame_rate)
+        add_overlays(frame, faces, frame_rate)
 
         frame_count += 1
         cv2.imshow('Video', frame)

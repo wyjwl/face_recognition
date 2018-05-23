@@ -134,7 +134,7 @@ class Identifier:
             data_after_process = process_data(self.wuhan_data, face.embedding)
             predict = self.model.predict(data_after_process)
             max_index = getMaxIndex(predict)
-            if predict[max_index] <= 0.84:
+            if predict[max_index] <= 0.8:
                 return "unknown " + str(predict[max_index])
             return self.name_list[max_index] + " " + str(predict[max_index])
 
